@@ -1,1 +1,2 @@
 Golang study
+這邊是我學習Go語言的筆記
