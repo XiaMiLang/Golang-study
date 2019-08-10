@@ -3,8 +3,8 @@
 package main
 
 //關鍵字 import 導入其它包
-//也可寫成 import aa "fmt", main函數內就會變寫成 aa.Println()
-//也可寫成 import . "fmt", main函數內就會變寫成 Println()
+//也可寫成 import aa "fmt", 使用 aa 來代表別名, main函數內即可寫成 aa.Println()
+//也可寫成 import . "fmt", 使用 . 表示省略調用, main函數內即可寫成 Println()
 /*
 import(
 	"errors"
@@ -34,8 +34,6 @@ type golang interface {
 }
 
 //關鍵字 func 定義函數
-
-//
 func main() {
 	fmt.Println()
 }
