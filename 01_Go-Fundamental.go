@@ -14,15 +14,24 @@ import(
 */
 import "fmt"
 
-//關鍵字 const 定義常量
+//關鍵字 const 定義常量. 常量值在進行函數運算前就要能確定, 不能以函數運算結果當成常量值
+//iota是常量的計數器, 從0開始, 組中每定義一個常量, iota計數器值自動增一.
+//在相同const組, iota關鍵字出現次數不影響. 從0開始計數.
+//在不同const組, iota從0開始計數.
+//一般以全大寫字母來表示常量
+//如果是只想在自己包內使用, 不被外部包使用, 可以寫成 _MAX_COUNT or cMAX_COUNT
+const MAX_COUNT= 'B'  //字符'B', 打印的話會顯示ASCII碼對應的數值.
 const PI = 3.14
 const (
 	const1 = "1"
 	const2 = 2
 	const3 = 3
+	c = const1
+	d = PI+const2
+	e = iota
 )
 
-//關鍵字 var 定義全局變量, 在整個 package 當中使用
+//關鍵字 var 只能定義全局變量, 在整個 package 當中使用
 var name = "John"
 var Age int
 var (
@@ -30,6 +39,12 @@ var (
 	name2 = 2
 	name3 = 3
 )
+var a, b, c, d int
+var e, f, g, h int = 1, 2, 3, 4
+
+var i, j, k, l int
+i, j, k, l = 1, 2, 3, 4
+
 
 //關鍵字 type 定義類型
 type AA int
