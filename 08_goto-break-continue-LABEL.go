@@ -61,14 +61,29 @@ import "fmt"
 //	fmt.Println("ok")
 //}
 
+//func main(){
+//LABEL1:
+//	for i :=0; i<10;i++{
+//		for{
+//			fmt.Println(i)
+//			continue LABEL1  //作業, 如果 continue 換成 goto, 結果會一樣嗎?
+//			fmt.Println("會執行嗎?",i)
+//		}
+//	}
+//	fmt.Println("ok")
+//}
+
 func main(){
 LABEL1:
-	for i :=0; i<10;i++{
-		for{
+	for {	//第一層循環
+		for i:=0; i<10; i++ {	//第二層循環
+			if i>3{
+				fmt.Println("if i>3", i)
+				//break	// 跳出此層循環
+				break LABEL1	// 跳出到 LABEL1 繼續執行
+			}
 			fmt.Println(i)
-			continue LABEL1  //作業, 如果 continue 換成 goto, 結果會一樣嗎?
-			fmt.Println("會執行嗎?",i)
 		}
 	}
-	fmt.Println("ok")
+	fmt.Println("測試有沒有繼續執行")
 }
