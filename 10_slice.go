@@ -82,9 +82,17 @@ import "fmt"
 //}
 
 // copy 可指定位置
+//func main(){
+//	s1 :=[]int{1, 2, 3, 4, 5}
+//	s2 :=[]int{6, 7, 8}
+//	copy(s1[1:3], s2[1:3])	//s2的指定位置 複製到 s1 的指定位置當中
+//	fmt.Println(s1, s2)
+//}
+
 func main(){
 	s1 :=[]int{1, 2, 3, 4, 5}
-	s2 :=[]int{6, 7, 8}
-	copy(s1[1:3], s2[1:3])	//s2的指定位置 複製到 s1 的指定位置當中
-	fmt.Println(s1, s2)
+	s2 := s1
+	//s2 := s1[:]
+	// s2 :=s1[:5]
+	fmt.Println(s2)
 }
