@@ -1,22 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
-const(
-	B float64 = 1 << (iota*10)
-	KB
-	MB
-)
-
+// 課堂作業. 將 map[int]string 鍵值交換, 變成 map[string]int
 func main(){
-
-	a := int(MB)
-	c := strconv.Itoa(a)
-
-	fmt.Println(B)
-	fmt.Println(KB)
-	fmt.Println(c)
+	m1 :=map[int]string{1:"a", 2:"b", 3:"c", 4:"d", 5:"e"}
+	m2 :=make(map[string]int)
+	fmt.Println(m1)
+	for k,v := range m1{
+		m2[v] = k
+	}
+	fmt.Println(m2)
 }

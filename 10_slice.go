@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // slice 本身不是數組, 它指向底層的數組
 //作為變長數組的替代方案, 可以關聯底層數組的局部或全部
 //為引用類型
@@ -89,10 +87,11 @@ import "fmt"
 //	fmt.Println(s1, s2)
 //}
 
-func main(){
-	s1 :=[]int{1, 2, 3, 4, 5}
-	s2 := s1
-	//s2 := s1[:]
-	// s2 :=s1[:5]
-	fmt.Println(s2)
-}
+//func main(){
+//	s1 :=[]int{1, 2, 3, 4, 5}
+//	s2 := s1
+//	//s2 := s1[:]
+//	// s2 :=s1[:5]
+//	fmt.Println(s2)
+//}
+
