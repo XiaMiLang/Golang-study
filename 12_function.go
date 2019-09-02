@@ -105,7 +105,9 @@ func main(){
 	fmt.Println(f(2))
 }
 func closure(x int) func(int) int{	//作用, 返回一個匿名函數
+	fmt.Printf("%p\n", &x)	//打印x的位址, 證明形成了一個閉包
 	return func (y int) int{
+		fmt.Printf("%p\n", &x)
 		return x+y
 	}
 }
