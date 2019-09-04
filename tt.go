@@ -8,28 +8,34 @@ import "fmt"
 
 // 這個 `intSeq` 函數返回另一個在 `intSeq` 函數體內定義的
 // 匿名函數。這個返回的函數使用閉包的方式 _隱藏_ 變數 `i`。
-func intSeq() func() int {
-	i := 0
-	return func() int {
-		i += 1
-		return i
-	}
-}
+//func intSeq() func() int {
+//	i := 0
+//	return func() int {
+//		i += 1
+//		return i
+//	}
+//}
+//
+//func main() {
+//
+//	// 我們呼叫 `intSeq` 函數，將返回值（也是一個函數）賦給
+//	// `nextInt`。這個函數的值包含了自己的值 `i`，這樣在每
+//	// 次呼叫 `nextInt` 時都會更新 `i` 的值。
+//	nextInt := intSeq()
+//
+//	// 通過多次呼叫 `nextInt` 來看看閉包的效果。
+//	fmt.Println(nextInt())
+//	fmt.Println(nextInt())
+//	fmt.Println(nextInt())
+//
+//	// 為了確認這個狀態對於這個特定的函數是唯一的，我們
+//	// 重新建立並測試一下。
+//	newInts := intSeq()
+//	fmt.Println(newInts())
+//}
 
-func main() {
 
-	// 我們呼叫 `intSeq` 函數，將返回值（也是一個函數）賦給
-	// `nextInt`。這個函數的值包含了自己的值 `i`，這樣在每
-	// 次呼叫 `nextInt` 時都會更新 `i` 的值。
-	nextInt := intSeq()
-
-	// 通過多次呼叫 `nextInt` 來看看閉包的效果。
-	fmt.Println(nextInt())
-	fmt.Println(nextInt())
-	fmt.Println(nextInt())
-
-	// 為了確認這個狀態對於這個特定的函數是唯一的，我們
-	// 重新建立並測試一下。
-	newInts := intSeq()
-	fmt.Println(newInts())
+func main(){
+	var fs = [4]func(){}
+	fmt.Println(fs)
 }
