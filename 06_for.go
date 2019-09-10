@@ -56,16 +56,21 @@ import "fmt"
 //	fmt.Println("Over")
 //}
 
+//func main(){
+//	a:=1
+//	for i:=0; i<3; i++{
+//		a++
+//		fmt.Println(a)
+//	}
+//	fmt.Println("Over")
+//}
+
 func main(){
-	a:=1
-	for i:=0; i<3; i++{
-		a++
-		fmt.Println(a)
+	var a =[20]int{}
+	for i,k := range a{
+		fmt.Println(i, k)
 	}
-	fmt.Println("Over")
 }
-
-
 
 
 
