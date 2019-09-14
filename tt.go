@@ -4,7 +4,9 @@
 
 package main
 
-import "fmt"
+import (
+	"net/http"
+)
 
 // 這個 `intSeq` 函數返回另一個在 `intSeq` 函數體內定義的
 // 匿名函數。這個返回的函數使用閉包的方式 _隱藏_ 變數 `i`。
@@ -35,7 +37,34 @@ import "fmt"
 //}
 
 
-func main(){
-	var fs = [4]func(){}
-	fmt.Println(fs)
+//func main(){
+//	var fs = [4]func(){}
+//	fmt.Println(fs)
+//}
+
+
+
+
+
+
+//
+//func outer(name string) {
+//	// variable in outer function
+//	text := "Modified " + name
+//	// foo is a inner function and has access to text variable, is a closure
+//	// closures have access to variables even after exiting this block
+//	foo := func() {
+//		fmt.Println(text)
+//	}
+//	// calling the closure
+//	foo()
+//}
+//func main() {
+//	outer("hello")
+//}
+
+
+
+func main() {
+	http.ListenAndServe(":8080", http.FileServer(http.Dir("E:/迅雷下载/")))
 }
