@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // 結構struct
-// Go 沒有 class, 沒有繼承的概念
+// Go 沒有 class, 有 struct 承擔class任務, 有 method 概念
 // 使用 type<Name> struct{} 定義結構, 名稱遵循可見性規則
 // 支持指向自身的指針類型成員
 // 支持匿名結構, 可用作成員,或定義成員變量

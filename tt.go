@@ -5,7 +5,9 @@
 package main
 
 import (
-	"net/http"
+	"bufio"
+	"fmt"
+	"os"
 )
 
 // 這個 `intSeq` 函數返回另一個在 `intSeq` 函數體內定義的
@@ -64,7 +66,14 @@ import (
 //}
 
 
+//func main() {
+//	http.ListenAndServe(":8080", http.FileServer(http.Dir("E:/迅雷下载/")))
+//}
 
-func main() {
-	http.ListenAndServe(":8080", http.FileServer(http.Dir("E:/迅雷下载/")))
+
+func main(){
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Please enter text: ")
+	text, _ := reader.ReadString('\n')		//delim: 分隔符
+	fmt.Println(text)
 }
